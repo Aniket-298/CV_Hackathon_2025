@@ -1,0 +1,112 @@
+/* Universal box-sizing for all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Animated diagonal lines neon background */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #b0ff49;
+  width: 100%;
+  background:
+    repeating-linear-gradient(
+      135deg,                 /* Diagonal lines at 135 degrees */
+      #161616 0 24px,
+      #1f1f1f 24px 48px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(176,255,73,0.08) 0%,
+      rgba(56,253,7,0.04) 100%
+    ),
+    #111;
+  background-size:
+    100px 100px,
+    cover,
+    cover;
+  animation: stripes-move 3s linear infinite;
+}
+
+@keyframes stripes-move {
+  0% {
+    background-position: 0 0,0 0,0 0;
+  }
+  100% {
+    background-position: 160px 160px,0 0,0 0;
+  }
+}
+
+.auth-form {
+  background: #181818;
+  border-radius: 10px;
+  box-shadow: 0 0 30px #89ff49;
+  padding: 32px 24px;
+  width: 330px;
+  max-width: 95vw; /* Responsive on small screens */
+}
+
+.auth-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Style all text-based inputs: first name, last name, email, password */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  background: #202020;
+  color: #b0ff49;
+  border: 1px solid #89ff49;
+  border-radius: 6px;
+  padding: 12px;
+  width: 100%;
+  margin-bottom: 18px;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #b0ff49;
+  color: #111;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  width: 100%;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #b0ff49, #38fd07);
+}
+
+.link {
+  color: #b0ff49;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.auth-switch {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.auth-message {
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* Extra neon glow when hovering over the form */
+.auth-form:hover {
+  box-shadow: 0 0 60px #b0ff49, 0 0 4px #38fd07;
+  transition: box-shadow 0.3s;
+}
